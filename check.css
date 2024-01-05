@@ -1,0 +1,79 @@
+element.style {
+}
+@media (max-width: 768px)
+.content-banner h1 {
+    font-size: 22px;
+}
+@media (max-width: 1130px)
+.content-banner h1 {
+    font-size: 34px;
+}
+.content-banner h1 {
+    font-weight: 400;
+    font-size: 44px;
+    color: #ffffff;
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+    margin: 0 0 20px;
+}
+* h1, * h2, * h3, * h4, * h5, * h6 {
+    font-weight: 400;
+}
+* h1, * h2, * h3, * h4, * h5, * h6, * p, * i, * b, * table, * td, * th, * ul, * li, * input, * form, * button, * div {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-size: 38px;
+    color: #000000;
+    font-weight: 400;
+}
+* {
+    box-sizing: border-box;
+}
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-appearance: none;
+}
+user agent stylesheet
+:-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+user agent stylesheet
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.content-banner {
+    height: 400px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+    padding-top: 160px;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    color: #000000;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>School Smart Library</title>
+	<link rel="stylesheet" type="text/css" href="style.css"> 
+	<script src="script.js"></script>
+	<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <meta name="color-scheme" content="light">
+</head>
+
+<form action="smartlibrary.php" method="post">
+<pyscript>
+	<header>
+		<h1>School Smart Library</h1>
+		<nav><font size="4">
+			<ul>
+				<li><a href="homepages.html">Home</a></li>
+				<li><a href="books.html">Books</a></li>
+				<li><a href="borrowedbooks.html">Borrowed Books</a></li>
+				<li><a href="book category.html">Book Category</a></li>
+				<li><a href="book latency.html">Book Latency</a></li>
+				<li><a href="about us.html"></a></li>
+			</ul>
+			</font>
+		</nav>
+	</header>
+	<body>
+	<select id="theme" onchange="switchtheme()">
+     <option value="light">Light</option>
+     <option value="dark">Dark</option>
+   </select>
+
+	<section>
+		<h2>Class and Student Data Entry</h2>
+		<form action="" method="post" id="student-form">
+			<label>Class:</label>
+			<select name="class-select" onchange="getStudents()">
+				<option value="">Select Class</option>
+				<option value="class 6-A">Class 6-A</option>
+				<option value="class 6-B">Class 6-B</option>
+				<option value="class 6-C">Class 6-C</option>
+				<option value="class 6-D">Class 6-D</option>
+				<option value="class 6-E">Class 6-E</option>
+				<option value="class 6-F">Class 6-F</option>
+				<option value="class 6-G">Class 6-G</option>
+				<option value="class 6-H">Class 6-H</option>
+				<option value="class 7-A">Class 7-A</option>
+				<option value="class 7-B">Class 7-B</option>
+				<option value="class 7-C">Class 7-C</option>
+				<option value="class 7-D">Class 7-D</option>
+				<option value="class 7-E">Class 7-E</option>
+				<option value="class 7-F">Class 7-F</option>
+				<option value="class 7-G">Class 7-G</option>
+				<option value="class 7-H">Class 7-H</option>
+				<option value="class 8-A">Class 8-A</option>
+				<option value="class 8-B">Class 8-B</option>
+				<option value="class 8-C">Class 8-C</option>
+				<option value="class 8-D">Class 8-D</option>
+				<option value="class 8-E">Class 8-E</option>
+				<option value="class 8-F">Class 8-F</option>
+				<option value="class 8-G">Class 8-G</option>
+				<option value="class 8-H">Class 8-H</option>
+				<option value="class 9-A">Class 9-A</option>
+				<option value="class 9-B">Class 9-B</option>
+				<option value="class 9-C">Class 9-C</option>
+				<option value="class 9-D">Class 9-D</option>
+				<option value="class 9-E">Class 9-E</option>
+				<option value="class 9-F">Class 9-F</option>
+				<option value="class 9-G">Class 9-G</option>
+				<option value="class 9-H">Class 9-H</option>
+				<option value="class 10-A">Class 10-A</option>
+				<option value="class 10-B">Class 10-B</option>
+				<option value="class 10-C">Class 10-C</option>
+				<option value="class 10-D">Class 10-D</option>
+				<option value="class 10-E">Class 10-E</option>
+				<option value="class 10-F">Class 10-F</option>
+				<option value="class 10-G">Class 10-G</option>
+				<option value="class 10-H">Class 10-H</option>
+				<option value="class 11-A">Class 11-A</option>
+				<option value="class 11-B">Class 11-B</option>
+				<option value="class 11-C">Class 11-C</option>
+				<option value="class 11-D">Class 11-D</option>
+				<option value="class 11-E">Class 11-E</option>
+				<option value="class 11-F">Class 11-F</option>
+				<option value="class 11-G">Class 11-G</option>
+				<option value="class 11-H">Class 11-H</option>
+				<option value="class 12-A">Class 12-A</option>
+				<option value="class 12-B">Class 12-B</option>
+				<option value="class 12-C">Class 12-C</option>
+				<option value="class 12-D">Class 12-D</option>
+				<option value="class 12-E">Class 12-E</option>
+				<option value="class 12-F">Class 12-F</option>
+				<option value="class 12-G">Class 12-G</option>
+				<option value="class 12-H">Class 12-H</option>
+				<option value="class 12-I">Class 12-I</option>
+				<option value="class 12-J">Class 12-J</option>
+				<option value="class 12-K">Class 12-K</option>
+				<option value="class 12-L">Class 12-L</option>
+				<option value="class 12-M">Class 12-M</option>
+				<option value="class 12-N">Class 12-N</option>
+				<option value="class 12-O">Class 12-O</option>
+				<option value="class 12-P">Class 12-P</option>
+				<option value="class 12-Q">Class 12-Q</option>
+				<option value="class 12-R">Class 12-R</option>
+				<option value="class 12-S">Class 12-S</option>
+			</select><br><br>
+			<div id="students-container"></div>
+			<button type="submit">Submit</button>
+		</form>
+
+		<h2>Book Data Entry</h2>
+		<form action="" method="post" id="book-form">
+			<label>Name:</label>
+			<input type="text" name="book-name"><br><br>
+			<label>Title:</label>
+			<input type="text" name="book-ID"><br><br>
+			<label>Book ID:</label>
+			<input type="text" name="book-title"><br><br>
+			<label>Author:</label>
+			<input type="text" name="book-author"><br><br>
+			<label>Publisher:</label>
+			<input type="text" name="Publisher"><br></br>
+			<label>Publishing Year:</label>
+			<input type="text" name="Publishing Year"><br><br>
+			<label>Title:</label>
+			<input type="text" name="book-ID"><br><br>
+			<label>Contribution way:</label>
+			<input type="text" name="Contribution way"><br><br>
+			<label>No of Pages:</label>
+			<input type="text" name=" no of pages"><br><br>
+			<input type="text" name="book-publisher"><br><br>
+			<label>Price:</label>
+			<input type="number" name="book-price"><br><br>
+			<label>Removed Date:</label>
+			<input type="number" name="removed date"><br><br>
+			<button type="submit">Add Book</button>
+			<button type="button" onclick="deleteBook()">Delete Book</button>
+		</form>
+
+		<h2>Borrow and Return Book Functionality</h2>
+		<form action="" method="post" id="borrow-form">
+			<label>Student Name:</label>
+			<input type="text" name="student-name"><br><br>
+			<label>Roll Number:</label>
+			<input type="text" name="roll-number"><br><br>
+			<label>Class:</label>
+			<select name="class-select">
+				<option value="">Select Class</option>
+				<option value="class 6-A">Class 6-A</option>
+				<option value="class 6-B">Class 6-B</option>
+				<option value="class 6-C">Class 6-C</option>
+				<option value="class 6-D">Class 6-D</option>
+				<option value="class 6-E">Class 6-E</option>
+				<option value="class 6-F">Class 6-F</option>
+				<option value="class 6-G">Class 6-G</option>
+				<option value="class 6-H">Class 6-H</option>
+				<option value="class 7-A">Class 7-A</option>
+				<option value="class 7-B">Class 7-B</option>
+				<option value="class 7-C">Class 7-C</option>
+				<option value="class 7-D">Class 7-D</option>
+				<option value="class 7-E">Class 7-E</option>
+				<option value="class 7-F">Class 7-F</option>
+				<option value="class 7-G">Class 7-G</option>
+				<option value="class 7-H">Class 7-H</option>
+				<option value="class 8-A">Class 8-A</option>
+				<option value="class 8-B">Class 8-B</option>
+				<option value="class 8-C">Class 8-C</option>
+				<option value="class 8-D">Class 8-D</option>
+				<option value="class 8-E">Class 8-E</option>
+				<option value="class 8-F">Class 8-F</option>
+				<option value="class 8-G">Class 8-G</option>
+				<option value="class 8-H">Class 8-H</option>
+				<option value="class 9-A">Class 9-A</option>
+				<option value="class 9-B">Class 9-B</option>
+				<option value="class 9-C">Class 9-C</option>
+				<option value="class 9-D">Class 9-D</option>
+				<option value="class 9-E">Class 9-E</option>
+				<option value="class 9-F">Class 9-F</option>
+				<option value="class 9-G">Class 9-G</option>
+				<option value="class 9-H">Class 9-H</option>
+				<option value="class 10-A">Class 10-A</option>
+				<option value="class 10-B">Class 10-B</option>
+				<option value="class 10-C">Class 10-C</option>
+				<option value="class 10-D">Class 10-D</option>
+				<option value="class 10-E">Class 10-E</option>
+				<option value="class 10-F">Class 10-F</option>
+				<option value="class 10-G">Class 10-G</option>
+				<option value="class 10-H">Class 10-H</option>
+				<option value="class 11-A">Class 11-A</option>
+				<option value="class 11-B">Class 11-B</option>
+				<option value="class 11-C">Class 11-C</option>
+				<option value="class 11-D">Class 11-D</option>
+				<option value="class 11-E">Class 11-E</option>
+				<option value="class 11-F">Class 11-F</option>
+				<option value="class 11-G">Class 11-G</option>
+				<option value="class 11-H">Class 11-H</option>
+				<option value="class 12-A">Class 12-A</option>
+				<option value="class 12-B">Class 12-B</option>
+				<option value="class 12-C">Class 12-C</option>
+				<option value="class 12-D">Class 12-D</option>
+				<option value="class 12-E">Class 12-E</option>
+				<option value="class 12-F">Class 12-F</option>
+				<option value="class 12-G">Class 12-G</option>
+				<option value="class 12-H">Class 12-H</option>
+				<option value="class 12-I">Class 12-I</option>
+				<option value="class 12-J">Class 12-J</option>
+				<option value="class 12-K">Class 12-K</option>
+				<option value="class 12-L">Class 12-L</option>
+				<option value="class 12-M">Class 12-M</option>
+				<option value="class 12-N">Class 12-N</option>
+				<option value="class 12-O">Class 12-O</option>
+				<option value="class 12-P">Class 12-P</option>
+				<option value="class 12-Q">Class 12-Q</option>
+				<option value="class 12-R">Class 12-R</option>
+				<option value="class 12-S">Class 12-S</option>
+			</select><br><br>
+			<label>Book Name:</label>
+			<input type="text" name="book-name"><br><br>
+			<label>Borrow Date:</label>
+			<input type="date" name="borrow-date"><br><br>
+			<button type="submit">Borrow Book</button>
+		</form>
+
+		<form action="" method="post" id="return-form">
+			<label>Student Name:</label>
+			<input type="text" name="student-name"><br><br>
+			<label>Roll Number:</label>
+			<input type="text" name="roll-number"><br><br>
+			<label>Class:</label>
+			<select name="class-select">
+				<option value="">Select Class</option>
+				<option value="class 6-A">Class 6-A</option>
+				<option value="class 6-B">Class 6-B</option>
+				<option value="class 6-C">Class 6-C</option>
+				<option value="class 6-D">Class 6-D</option>
+				<option value="class 6-E">Class 6-E</option>
+				<option value="class 6-F">Class 6-F</option>
+				<option value="class 6-G">Class 6-G</option>
+				<option value="class 6-H">Class 6-H</option>
+				<option value="class 7-A">Class 7-A</option>
+				<option value="class 7-B">Class 7-B</option>
+				<option value="class 7-C">Class 7-C</option>
+				<option value="class 7-D">Class 7-D</option>
+				<option value="class 7-E">Class 7-E</option>
+				<option value="class 7-F">Class 7-F</option>
+				<option value="class 7-G">Class 7-G</option>
+				<option value="class 7-H">Class 7-H</option>
+				<option value="class 8-A">Class 8-A</option>
+				<option value="class 8-B">Class 8-B</option>
+				<option value="class 8-C">Class 8-C</option>
+				<option value="class 8-D">Class 8-D</option>
+				<option value="class 8-E">Class 8-E</option>
+				<option value="class 8-F">Class 8-F</option>
+				<option value="class 8-G">Class 8-G</option>
+				<option value="class 8-H">Class 8-H</option>
+				<option value="class 9-A">Class 9-A</option>
+				<option value="class 9-B">Class 9-B</option>
+				<option value="class 9-C">Class 9-C</option>
+				<option value="class 9-D">Class 9-D</option>
+				<option value="class 9-E">Class 9-E</option>
+				<option value="class 9-F">Class 9-F</option>
+				<option value="class 9-G">Class 9-G</option>
+				<option value="class 9-H">Class 9-H</option>
+				<option value="class 10-A">Class 10-A</option>
+				<option value="class 10-B">Class 10-B</option>
+				<option value="class 10-C">Class 10-C</option>
+				<option value="class 10-D">Class 10-D</option>
+				<option value="class 10-E">Class 10-E</option>
+				<option value="class 10-F">Class 10-F</option>
+				<option value="class 10-G">Class 10-G</option>
+				<option value="class 10-H">Class 10-H</option>
+				<option value="class 11-A">Class 11-A</option>
+				<option value="class 11-B">Class 11-B</option>
+				<option value="class 11-C">Class 11-C</option>
+				<option value="class 11-D">Class 11-D</option>
+				<option value="class 11-E">Class 11-E</option>
+				<option value="class 11-F">Class 11-F</option>
+				<option value="class 11-G">Class 11-G</option>
+				<option value="class 11-H">Class 11-H</option>
+				<option value="class 12-A">Class 12-A</option>
+				<option value="class 12-B">Class 12-B</option>
+				<option value="class 12-C">Class 12-C</option>
+				<option value="class 12-D">Class 12-D</option>
+				<option value="class 12-E">Class 12-E</option>
+				<option value="class 12-F">Class 12-F</option>
+				<option value="class 12-G">Class 12-G</option>
+				<option value="class 12-H">Class 12-H</option>
+				<option value="class 12-I">Class 12-I</option>
+				<option value="class 12-J">Class 12-J</option>
+				<option value="class 12-K">Class 12-K</option>
+				<option value="class 12-L">Class 12-L</option>
+				<option value="class 12-M">Class 12-M</option>
+				<option value="class 12-N">Class 12-N</option>
+				<option value="class 12-O">Class 12-O</option>
+				<option value="class 12-P">Class 12-P</option>
+				<option value="class 12-Q">Class 12-Q</option>
+				<option value="class 12-R">Class 12-R</option>
+				<option value="class 12-S">Class 12-S</option>
+				
+			</select><br><br>
+			<label>Book Name:</label>
+			<input type="text" name="book-name"><br><br>
+			<label>Return Date:</label>
+			<input type="date" name="return-date"><br><br>
+			<button type="submit">Return Book</button>
+		</form>
+
+		<h2>Book Availability</h2>
+		<form action="" method="post" id="availability-form">
+			<label>Book Name:</label>
+			<input type="text" name="book-name"><br><br>
+			<button type="submit">Check Availability</button><br><br>
+			</pyscript>
+		<form action="" method="post" id="availability-form">
+			<label>Book ID:</label>
+			<input type="text" name="book-name"><br><br>
+			<button type="submit">Check Availability</button>
+			</pyscript>

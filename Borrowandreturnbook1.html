@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Borrowandreturn.css">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 150%;
+  width: 350px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+	<a href="homepages.html">Home</a><br>
+        <a href="studentstaff or books.html">Data Entry</a><br>
+        <a href="books.html"> Books</a><br>
+    <a href="borrowedbooks.html">Borrowed Books</a><br>
+    <a href="book category.html">Book Category</a><br>
+    <a href="bookavalability1.html">Book Avalability</a><br>
+    <a href="booklatency.html">Book Latency</a><br>
+    <a href="Aboutusnew.html">About Us</a><br>
+</div>
+
+<div class="container">
+    <div class="title">Borrow Books Here!</div>
+    <div class="content">
+      <form action="connect.php" method="post" >
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Student ID</span>
+            <input type="text" placeholder="Enter Student ID" name="SID" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Book ID</span>
+            <input type="text" placeholder="Enter Book ID" name="BID" required>
+          </div>
+The date should be return:
+
+       
+      <div class="button">
+          <input type="submit" value="Borrow Book">
+        </div>
+      </div>
+    </form>
+    
+      <div>
+          <div class="container">
+    <div class="title">Return Books Here!</div>
+    <div class="content">
+      <form action="SBR.PHP" method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Student ID</span>
+            <input type="text" placeholder="Enter Student ID" required name="SID">
+          </div>
+          <div class="input-box">
+            <span class="details">Book ID</span>
+            <input type="text" placeholder="Enter Book ID" required name="BID">
+          </div>
+Returned Date:          
+         
+          <div class="button">
+          <input type="submit" value="Return Book">
+        </div>
+      </div>
+</div>
+ 
+</body>
+</html> 

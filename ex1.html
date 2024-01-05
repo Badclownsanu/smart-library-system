@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library System - Book Details</title>
+</head>
+<body>
+
+    <h1>Book Details</h1>
+
+    <div id="books-container"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fetch and display books using JavaScript
+            fetchBooks();
+        });
+
+        function fetchBooks() {
+            // Make an AJAX request to get book data from the server
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    const books = JSON.parse(xhr.responseText);
+                    displayBooks(books);
+                }
+            };
+            xhr.open("GET", "ex1.php", true);
+            xhr.send();
+        }
+
+        function displayBooks(books) {
+            const booksContainer = document.getElementById("books-container");
+            booksContainer.innerHTML = ""; // Clear previous content
+
+            if (books.length === 0) {
+                booksContainer.innerHTML = "<p>No books available.</p>";
+                return;
+            }
+
+            const table = document.createElement("table");
+            table.innerHTML = `
+                <tr>
+                    <th>Book ID</th>
+                    <th>Book Name</th>
+                    <th>Author</th>
+                    <th>Availability</th>
+                </tr>
+            `;
+
+            books.forEach(book => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${book.BookID}</td>
+                    <td>${book.bookname}</td>
+                    <td>${book.Author}</td>
+                    <td>${book.availability ? "Available" : "Not Available"}</td>
+                `;
+                table.appendChild(row);
+            });
+
+            booksContainer.appendChild(table);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/x-icon" href="logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="STdataentry.css">
+<script src="scrip.js"></script>
+	<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 150%;
+  width: 350px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+        <a href="homepages.html">Home</a><br>
+        <a href="borrowandreturnstorstaff.html">Borrow and Return Books</a><br>
+        <a href="studentstaff or books.html">Data Entry</a><br>
+        <a href="books.html"> Books</a><br>
+		<a href="borrowedbooks.html">Borrowed Books</a><br>
+		<a href="book category.html">Book Category</a><br>
+		<a href="bookavalability1.html">Book Avalability</a><br>
+		<a href="booklatency.html">Book Latency</a><br>
+		<a href="Aboutusnew.html">About Us</a><br>
+</div>
+
+  <div class="container">
+    
+    <div class="title">Student Data Entry</div>
+    <div class="content">
+    
+
+	<section>
+		<div class="container">
+			<br>
+
+    <div class="content">
+		<form action="STDE.php" method="post" id="student-form">
+			<label>Class:</label>
+			<select name="CLZ" onchange="getStudents()">
+				<option value="">Select Class</option>
+				<option value="class 6-A">Class 6-A</option>
+				<option value="class 6-B">Class 6-B</option>
+				<option value="class 6-C">Class 6-C</option>
+				<option value="class 6-D">Class 6-D</option>
+				<option value="class 6-E">Class 6-E</option>
+				<option value="class 6-F">Class 6-F</option>
+				<option value="class 6-G">Class 6-G</option>
+				<option value="class 6-H">Class 6-H</option>
+				<option value="class 7-A">Class 7-A</option>
+				<option value="class 7-B">Class 7-B</option>
+				<option value="class 7-C">Class 7-C</option>
+				<option value="class 7-D">Class 7-D</option>
+				<option value="class 7-E">Class 7-E</option>
+				<option value="class 7-F">Class 7-F</option>
+				<option value="class 7-G">Class 7-G</option>
+				<option value="class 7-H">Class 7-H</option>
+				<option value="class 8-A">Class 8-A</option>
+				<option value="class 8-B">Class 8-B</option>
+				<option value="class 8-C">Class 8-C</option>
+				<option value="class 8-D">Class 8-D</option>
+				<option value="class 8-E">Class 8-E</option>
+				<option value="class 8-F">Class 8-F</option>
+				<option value="class 8-G">Class 8-G</option>
+				<option value="class 8-H">Class 8-H</option>
+				<option value="class 9-A">Class 9-A</option>
+				<option value="class 9-B">Class 9-B</option>
+				<option value="class 9-C">Class 9-C</option>
+				<option value="class 9-D">Class 9-D</option>
+				<option value="class 9-E">Class 9-E</option>
+				<option value="class 9-F">Class 9-F</option>
+				<option value="class 9-G">Class 9-G</option>
+				<option value="class 9-H">Class 9-H</option>
+				<option value="class 10-A">Class 10-A</option>
+				<option value="class 10-B">Class 10-B</option>
+				<option value="class 10-C">Class 10-C</option>
+				<option value="class 10-D">Class 10-D</option>
+				<option value="class 10-E">Class 10-E</option>
+				<option value="class 10-F">Class 10-F</option>
+				<option value="class 10-G">Class 10-G</option>
+				<option value="class 10-H">Class 10-H</option>
+				<option value="class 11-A">Class 11-A</option>
+				<option value="class 11-B">Class 11-B</option>
+				<option value="class 11-C">Class 11-C</option>
+				<option value="class 11-D">Class 11-D</option>
+				<option value="class 11-E">Class 11-E</option>
+				<option value="class 11-F">Class 11-F</option>
+				<option value="class 11-G">Class 11-G</option>
+				<option value="class 11-H">Class 11-H</option>
+				<option value="class 12-A">Class 12-A</option>
+				<option value="class 12-B">Class 12-B</option>
+				<option value="class 12-C">Class 12-C</option>
+				<option value="class 12-D">Class 12-D</option>
+				<option value="class 12-E">Class 12-E</option>
+				<option value="class 12-F">Class 12-F</option>
+				<option value="class 12-G">Class 12-G</option>
+				<option value="class 12-H">Class 12-H</option>
+				<option value="class 12-I">Class 12-I</option>
+				<option value="class 12-J">Class 12-J</option>
+				<option value="class 12-K">Class 12-K</option>
+				<option value="class 12-L">Class 12-L</option>
+				<option value="class 12-M">Class 12-M</option>
+				<option value="class 12-N">Class 12-N</option>
+				<option value="class 12-O">Class 12-O</option>
+				<option value="class 12-P">Class 12-P</option>
+				<option value="class 12-Q">Class 12-Q</option>
+				<option value="class 12-R">Class 12-R</option>
+				<option value="class 12-S">Class 12-S</option>
+			</select><br><br>
+		
+
+			<div class="user-details">
+          <div class="input-box">
+            <span class="details">Student ID Number</span>
+            <input type="text" placeholder="Enter Student ID" name='SID'required>
+          </div>
+          <div class="input-box">
+            <span class="details">Student Name</span>
+            <input type="text" placeholder="Enter Name" name='STN' required>
+          </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" placeholder="Enter Address" name='ADRS'>
+          </div>
+          <div class="input-box">
+            <span class="details">Contact Number</span>
+            <input type="text" placeholder="Enter Contact Number" name='CN'>
+          </div>
+          <div class="input-box">
+            <span class="details">Date of Birth</span>
+            <input type="text" placeholder="Enter Date of Birth" name='DOB'>
+          </div>
+          <div class="input-box">
+            <span class="details">Gender</span>
+            <input type="text" placeholder="Enter Gender" name='GND'>
+          </div>
+          <div class="input-box">
+            <span class="details">Gurdian</span>
+            <input type="text" placeholder="Enter Contact Number" name='GRD'>
+          </div>
+          <div class="radio">
+            <span class="details">Gender</span>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+
+          </div>
+        </div>
+        
+         <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          
+          <div class="category">
+            
+            <span class="dot one"></span>
+           
+          </label>
+          
+            <span class="dot two"></span>
+            
+     
+            </label>
+          </div>
+          <div class="button">
+          <input type="submit" value="Submit" style="text-align:center">
+        </div>
+        </div>
+
+					</form>
+
+	</div>
+	</div>	
+</section>
+			</form>
+</head>
+</html>

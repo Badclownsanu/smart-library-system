@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bookdataentry.css">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 150%;
+  width: 350px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  
+        <a href="homepages.html">Home</a><br>
+        <a href="borrowandreturnstorstaff.html">Borrow and Return Books</a><br>
+        <a href="studentstaff or books.html">Data Entry</a><br>
+        <a href="books.html"> Books</a><br>
+    <a href="borrowedbooks.html">Borrowed Books</a><br>
+    <a href="book category.html">Book Category</a><br>
+    <a href="bookavalability1.html">Book Avalability</a><br>
+    <a href="booklatency.html">Book Latency</a><br>
+    <a href="Aboutusnew.html">About Us</a><br>
+</div>
+
+  <div class="container">
+    
+    <div class="title">Book Data Entry</div>
+    <div class="content">
+       <form action="BDA.php" method="post" >
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Book Name</span>
+            <input type="text" placeholder="Enter Book name" name="BN" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Book ID</span>
+            <input type="text" placeholder="Enter Book ID" name="BID"required>
+          </div>
+          <div class="input-box">
+            <span class="details">Author</span>
+            <input type="text" placeholder="Enter Autho's Name" name="AUT">
+          </div>
+          <div class="input-box">
+            <span class="details">Publisher</span>
+            <input type="text" placeholder="Enter Publisher Name" name="PUB" >
+          </div>
+          <div class="input-box">
+            <span class="details">Publishing Year</span>
+            <input type="text" placeholder="Enter Publishing Year" name="PUBY">
+          </div>
+          <div class="input-box">
+            <span class="details">Contribution</span>
+            <input type="text" placeholder="Enter Contribution Method" name="CON">
+          </div>
+          <div class="input-box">
+            <span class="details">No of Pages</span>
+            <input type="text" placeholder="Enter Number of pages" name="NPG">
+          </div>
+          <div class="input-box">
+            <span class="details">Prize</span>
+            <input type="text" placeholder="Enter Prize" name="PRZ">
+          </div>
+          <div class="input-box">
+            <span class="details">Remove Date</span>
+            <input type="text" placeholder="Remove Date"name="RD" >
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          
+          <div class="category">
+            
+            <span class="dot one"></span>
+           
+          </label>
+          
+            <span class="dot two"></span>
+            
+     
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Add Book">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
